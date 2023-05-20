@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Geolocation API</title>
+</head>
+
+<body>
+    <h1> Geo Locationapi Examples</h1>
+    <p id="location"></p>
+    <button onclick="getlocation()">Get Location </button>
+</body>
+<script>
+    var p = document.getElementById('location')
+    function getlocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(getPosition)
+
+        } else {
+            p.innerHTML = "Geolocation  Api is not supported"
+        }
+    }
+    function getPosition(position) {
+        p.innerHTML = "Location: Latitude -->" + position.coords.latitude +
+            "<br> Longitude -->" + position.coords.longitude
+
+    }
+</script>
+
+</html>
